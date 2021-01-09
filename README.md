@@ -33,3 +33,13 @@ Angular commit 规范 [`https://github.com/angular/angular/blob/master/CONTRIBUT
 ### 其他：
 
 可以安装 `vscode-commitizen` 插件，使用 `ctrl+shift+p` 或 `command+shift+p` 使用 `conventional commit` 提交代码。
+
+## Gitlab 配置
+
+- 添加 `.releaserc.json` 文件，其他中` "gitlabUrl": "http://37.99.107.215:28090"` 为内部服务地址
+- 添加 `.gitlab-ci.yml` 文件，包含 安装、代码质量、测试、构建、release、部署
+
+- 添加 `Access-Token` ，`User Settings` -> `Access Tokens`
+- 添加 `GITLAB_TOKEN` 变量，项目 -> `Settings` -> `CI/CD` -> `Variables`，在 Key中填入 `GITLAB_TOKEN`，  Value中填入 `Access-Token` 值
+
+代码提交时，需按照上面的`commit`格式，才会正确打`tag`和`release`
